@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/windowOpenCss.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/css/adminDashBoard.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 class="stdHeadhOneProfile">Karunakar Gollapally</h1>
+            <div class="row" style="border:1px solid #dbdbdb;margin:-10px 0px 0px 0px;background-color: #f6f6f6;padding:1%;">
+            <div class="col-md-3">
+                <div class="card" style="width:80%;"><img src="avatarMail.png" alt="Avatar" style="width:100%;">
+                    <div class="container">
+                       <h4 class="stdProfileCardClass" style="word-wrap: break-word !important;"><strong>Karnakar</strong></h4>
+                        <a href=""><i style="font-size: 20px !important;" class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href=""><i style="font-size: 20px !important;color:dd4b39;margin-left:3px;" class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        <!-- <p class="stdProfileSubCardClass">Student</p>-->
+                    </div>
+                    <a href="" style="padding:1%"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="col-md-5">
+            <table class="table stdProfileClass">
+                <tbody>
+                    <tr>
+                        <th>FullName </th><th>:</th><td>Gollapally Karunakar</td>
+                    </tr>
+                    <tr>
+                        <th>Batch </th><th>:</th><td>10</td>
+                    </tr>
+                    <tr>
+                        <th>Email </th><th>: </th><td>karnakar.g27@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <th>Mobile </th><th>:</th><td>8897574902</td>
+                    </tr>
+                    <tr>
+                        <th>Gender </th><th>:</th><td>Male</td>
+                    </tr>
+                    <tr>
+                        <th>ParentName </th><th>:</th><td>Yadagiri</td>
+                    </tr>
+                    
+                    <tr>
+                        <th>Parent Mobile </th><th>:</th><td>8897574902</td>
+                    </tr>
+                    <tr>
+                        <th>YOP </th><th>:</th><td>2016</td>
+                    </tr>
+                    <tr>
+                        <th>Fee </th><th>:</th><td>20000</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="col-md-4">
+                <table class="table stdProfileClass">
+                    <tbody>
+                    <tr><th>College </th><th>:</th><td>Loyola Academy</td></tr>
+                    <tr><th>GType </th><th>: </th><td>MCA</td></tr>
+                    <tr><th>SSC </th><th>:</th><td>88</td></tr>
+                    <tr><th>Inter </th><th>:</th><td>97</td></tr>
+                    <tr><th>Degree </th><th>:</th><td>89</td></tr>
+                    <tr><th>Aggregation </th><th>:</th><td>82</td></tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    </div>
+    <br>
+        <div class="row" id="progressId" style="display:none;">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 class="stdHeadhOneProfile">Progress</h1>
+            <div class="row stdDetailsClassShowData" style="height:250px;">
+                <h1>Progress Map</h1>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <div class="row" id="attendanceId" style="display:none;">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1 class="stdHeadhOneProfile">Attendance</h1>
+            <div class="row stdDetailsClassShowData" style="height:250px;">
+                <h1>Attendance Map</h1>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <br><br>
+</div>
+
+<script>
+    function prohideShowStdBars()
+    {
+        var progressId=document.getElementById('progressId');
+        var attendanceId=document.getElementById('attendanceId');
+
+        if(progressId.style.display == 'none')
+        {
+            progressId.style.display='block';
+            attendanceId.style.display='none';
+        }
+        else
+        {
+            attendanceId.style.display='none';
+        }
+    }
+    function atthideShowStdBars()
+    {
+        var progressId=document.getElementById('progressId');
+        var attendanceId=document.getElementById('attendanceId');
+
+        if(attendanceId.style.display == 'none')
+        {
+            progressId.style.display='none';
+            attendanceId.style.display='block';
+        }
+        else
+        {
+            progressId.style.display='none';
+        }
+    }
+</script>
+<script>
+    
+</script>
+
+</div>
+</body>
+</html>
