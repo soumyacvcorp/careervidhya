@@ -1693,13 +1693,13 @@ name=admin.getName();
         
         <div ng-show="myAttReport" class="my-modal">
   			<div class="mymodal-content" style="width:70%" >
-    			<div class="mymodal-header">
-    				<div class="col-lg-12">
+    			<div class="mymodal-header" style="padding:0px">
+    				<div class="col-lg-12" style="background-color: darkslateblue;margin-bottom: 2px;">
     					<div class="col-lg-6">
     					<p class="sub-heading" style="color:#fff!important;margin:0px!important;padding:0px!important">&nbsp;&nbsp;&nbsp;<span class="my-close" ng-click="myAttReport=false">&times;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:16px!important">Attendance Report</span></p>
     					</div>
     					<div class="col-lg-6">
-    						<select ng-model="att.attIndStuddatashow" class="form-control" style="height: 34px!important" ng-change="filterindstuddata()">
+    						<select ng-model="att.attIndStuddatashow" class="form-control" style="height: 30px!important;margin-top: 2px;width: 50%;float: right;" ng-change="filterindstuddata()">
                                  <option>overall</option>
                                  <option>present</option>
                                  <option>absent</option>
@@ -1723,7 +1723,7 @@ name=admin.getName();
                					<tr ng-repeat="report in list.report">
                						<td>{{report.subject}}</td>
                						<td ng-style="report.status?{'color':'green'}:{'color':'red'}">{{report.status?'Present':'Absent'}}</td>
-               						<td ><p style="margin:0px" ng-repeat="tp in report.topic.split('-#-')">{{tp}}</p></td>
+               						<td ><p style="margin:0px" ng-repeat="tp in report.topic.split('-#-') track by $index">{{tp}}</p></td>
                					</tr>
                				</table>
                				</td>	

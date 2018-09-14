@@ -357,6 +357,32 @@ function studentAttCon($scope,$http,$q){
 			$scope.topicMissedListByStudentShow[i].sendMail=$scope.seletcAllAttendanceDashbordTopic;
 		}
 	}
+	$scope.getMissedTopic=function(data){
+		var topic='NA';
+		if((((data.workingDateList!=null && data.workingDateList!=undefined && data.workingDateList!='')?data.workingDateList.split(',').length:0)-((data.attance!=null && data.attance!=undefined && data.attance!='')?data.attance.split(',').length:0))>=1){
+			var arr=data.workingDateList.trim().split(',');
+			var b=true;
+			var v=[];
+			var cnt=0; 
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]!=undefined && arr[i]!=""){
+					var d=arr[i].trim().split("@");
+					if(!chk1(data.attance,d[0])){
+						var t=$scope.TopicListByBatch[data.batch][arr[i]]!=undefined?$scope.TopicListByBatch[data.batch][arr[i]]:'NA';
+						if(t=='NA') cnt++;
+						else{
+							if(v.indexOf(t)<0){
+								v.push(t);
+							}
+						}
+					}	
+				}
+			}
+			if(cnt>0) topic=v.toString()+" & "+cnt+" more";
+			else topic=v.toString();
+		}
+		return topic;
+	}
 	
 	$scope.sendMail=function(){
 		var v=[];
@@ -368,6 +394,7 @@ function studentAttCon($scope,$http,$q){
 					msg=msg.replace(new RegExp('{batch}', 'gi'),$scope.attDashbordSearchData[i].batch );
 					msg=msg.replace(new RegExp('{absent}', 'gi'),($scope.attDashbordSearchData[i].workingDateList!=undefined?$scope.attDashbordSearchData[i].workingDateList.split(',').length:0) - ($scope.attDashbordSearchData[i].attance!=undefined?$scope.attDashbordSearchData[i].attance.split(',').length:0));
 					msg=msg.replace(new RegExp('{duration}', 'gi'),attScope.attDashbordTime!='Select Date'?attScope.attDashbordTime:attScope.showDashbord_date);
+					msg=msg.replace(new RegExp('{missedTopic}', 'gi'),$scope.getMissedTopic(angular.copy($scope.attDashbordSearchData[i])));
 					var data={"email":$scope.attDashbordSearchData[i].email,"message":msg};
 					v.push(data);
 				}

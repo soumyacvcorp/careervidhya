@@ -558,7 +558,7 @@ public class AdminService {
 	{	
 		String subject="CareerVidhya Notice";
 		SimpleMailMessage sm=new SimpleMailMessage();
-		sm.setTo(email);
+		sm.setTo("soumya.jena@cvcorp.in");
 		sm.setSubject(subject);
 		sm.setText(message);
 		mailSender.send(sm);

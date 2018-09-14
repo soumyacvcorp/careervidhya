@@ -20,9 +20,9 @@ http://www.springframework.org/schema/context/spring-context-4.3.xsd">
     
     <bean id="dbConnection" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     <property name="driverClassName" value="com.mysql.jdbc.Driver"></property><!-- cvcorp.crzw3zrski3t.us-east-1.rds.amazonaws.com -->
-    <property name="url" value="jdbc:mysql://localhost:3306/cvcorp"></property>
+    <property name="url" value="jdbc:mysql://cvcorp.crzw3zrski3t.us-east-1.rds.amazonaws.com:3306/cvcorp"></property>
     <property name="username" value="root"></property>
-    <property name="password" value="root"></property><!-- shivudu3 -->
+    <property name="password" value="shivudu3"></property><!-- shivudu3 -->
     </bean>
     
     <bean id="ds" class="org.springframework.jdbc.core.JdbcTemplate">
